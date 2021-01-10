@@ -4,6 +4,7 @@ import "./App.css";
 import HomePage from "./pages/homepage/HomePage";
 import ShopPage from "./pages/shoppage/ShopPage";
 import Header from "./components/header/Header";
+import SignInUp from "./pages/sign-in-up/sign-in-up";
 
 function App() {
 	return (
@@ -15,6 +16,9 @@ function App() {
 				</Route>
 				<Route path="/shop">
 					<ShopPage />
+				</Route>
+				<Route path="/user">
+					<SignInUp />
 				</Route>
 			</Switch>
 		</div>
