@@ -46,10 +46,9 @@ const SignIn = () => {
 					required
 				/>
 				<div className="buttons">
-					<Button type="submit">SignIn</Button>
-
+					<Button type="submit">Sign In</Button>
 					<Button onClick={signInWithGoogle} googleSignIn>
-						Sign In With Google
+						Google Sign In
 					</Button>
 				</div>
 			</form>
