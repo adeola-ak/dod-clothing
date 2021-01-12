@@ -18,7 +18,7 @@ function App() {
 				userRef.onSnapshot((snapShot) => {
 					setCurrentUser({
 						id: snapShot.id,
-						data: snapShot.data(),
+						userData: snapShot.data(),
 					});
 				});
 			} else {
