@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 import "./App.css";
@@ -9,9 +9,9 @@ import SignInUp from "./pages/sign-in-up/sign-in-up";
 import { auth, createUserProfileDocument } from "./firebase/firebase-utils";
 import { setCurrentUser } from "./redux/user/user.actions";
 
-function App() {
-	console.log(setCurrentUser);
-	console.log(currentUser);
+function App(props) {
+	const setCurrentUser = props.setCurrentUser;
+
 	useEffect(() => {
 		const unsubscribe = auth.onAuthStateChanged(async (userAuth) => {
 			if (userAuth) {
@@ -29,8 +29,7 @@ function App() {
 		});
 
 		return () => unsubscribe();
-	}, []);
-	// console.log(currentUser);
+	});
 	return (
 		<div className="App">
 			<Header />
