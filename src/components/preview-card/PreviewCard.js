@@ -1,7 +1,11 @@
 import React from "react";
 import "./PreviewCard.scss";
+import Button from "../button/Button";
+import { connect } from "react-redux";
+import { addItem } from "../../redux/cart/cart.actions";
 
-const PreviewCard = ({ id, name, imageUrl, price }) => {
+const PreviewCard = ({ item, addItem }) => {
+	const { name, price, imageUrl } = item;
 	return (
 		<div className="collection-item">
 			<div
@@ -14,8 +18,15 @@ const PreviewCard = ({ id, name, imageUrl, price }) => {
 				<span className="name">{name}</span>
 				<span className="price">{price}</span>
 			</div>
+			<Button onClick={() => addItem(item)} inverted>
+				Add to Cart
+			</Button>
 		</div>
 	);
 };
 
-export default PreviewCard;
+const mapDispatchToProps = (dispatch) => ({
+	addItem: (item) => dispatch(addItem(item)),
+});
+
+export default connect(null, mapDispatchToProps)(PreviewCard);
