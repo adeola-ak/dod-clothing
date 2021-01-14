@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import "./App.css";
 import HomePage from "./pages/homepage/HomePage";
@@ -29,7 +29,7 @@ function App(props) {
 		});
 
 		return () => unsubscribe();
-	});
+	}, []);
 	return (
 		<div className="App">
 			<Header />
@@ -40,16 +40,24 @@ function App(props) {
 				<Route path="/shop">
 					<ShopPage />
 				</Route>
-				<Route path="/user">
-					<SignInUp />
-				</Route>
+				<Route
+					exact
+					path="/user"
+					render={() =>
+						props.currentUser ? <Redirect to="/" /> : <SignInUp />
+					}
+				></Route>
 			</Switch>
 		</div>
 	);
 }
 
+const mapStateToProps = ({ user }) => ({
+	currentUser: user.currentUser,
+});
+
 const mapDispatchToProps = (dispatch) => ({
 	setCurrentUser: (user) => dispatch(setCurrentUser(user)),
 });
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
