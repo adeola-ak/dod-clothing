@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import "./Header.scss";
 import { auth } from "../../firebase/firebase-utils";
 import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
 import CartIcon from "../cart-icon/CartIcon";
 import CartDropdown from "../cart-dropdown/CartDropdown";
+import { selectCartHidden } from "../../redux/cart/cart.selectors";
+import { selectCurrentUser } from "../../redux/user/user.selectors";
 
 const Header = ({ currentUser, hidden }) => {
 	return (
@@ -43,9 +46,16 @@ const Header = ({ currentUser, hidden }) => {
 
 //replace with:
 
-const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
-	currentUser,
-	hidden,
+// const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
+// 	currentUser,
+// 	hidden,
+// });
+
+//using structured selector to avoid listing every single selector with repetitive code:
+
+const mapStateToProps = createStructuredSelector({
+	currentUser: selectCurrentUser,
+	hidden: selectCartHidden,
 });
 
 export default connect(mapStateToProps)(Header);

@@ -6,8 +6,11 @@ import HomePage from "./pages/homepage/HomePage";
 import ShopPage from "./pages/shoppage/ShopPage";
 import Header from "./components/header/Header";
 import SignInUp from "./pages/sign-in-up/sign-in-up";
+import Checkout from "./pages/checkout/Checkout";
 import { auth, createUserProfileDocument } from "./firebase/firebase-utils";
 import { setCurrentUser } from "./redux/user/user.actions";
+import { selectCurrentUser } from "./redux/user/user.selectors";
+import { createStructuredSelector } from "reselect";
 
 function App(props) {
 	const setCurrentUser = props.setCurrentUser;
@@ -40,6 +43,9 @@ function App(props) {
 				<Route path="/shop">
 					<ShopPage />
 				</Route>
+				<Route exact path="/checkout">
+					<Checkout />
+				</Route>
 				<Route
 					exact
 					path="/user"
@@ -52,8 +58,12 @@ function App(props) {
 	);
 }
 
-const mapStateToProps = ({ user }) => ({
-	currentUser: user.currentUser,
+// const mapStateToProps = ({ user }) => ({
+// 	currentUser: user.currentUser,
+// });
+
+const mapStateToProps = createStructuredSelector({
+	currentUser: selectCurrentUser,
 });
 
 const mapDispatchToProps = (dispatch) => ({
