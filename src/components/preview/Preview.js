@@ -1,5 +1,5 @@
 import React from "react";
-import PreviewCard from "../preview-card/PreviewCard";
+import PreviewCard from "../collection-item/CollectionItem";
 import "./Preview.scss";
 
 const Preview = ({ title, items }) => {

@@ -1,10 +1,10 @@
 import React from "react";
-import "./PreviewCard.scss";
+import "./CollectionItem.scss";
 import Button from "../button/Button";
 import { connect } from "react-redux";
 import { addItem } from "../../redux/cart/cart.actions";
 
-const PreviewCard = ({ item, addItem }) => {
+const CollectionItem = ({ item, addItem }) => {
 	const { name, price, imageUrl } = item;
 	return (
 		<div className="collection-item">
@@ -29,4 +29,4 @@ const mapDispatchToProps = (dispatch) => ({
 	addItem: (item) => dispatch(addItem(item)),
 });
 
-export default connect(null, mapDispatchToProps)(PreviewCard);
+export default connect(null, mapDispatchToProps)(CollectionItem);
