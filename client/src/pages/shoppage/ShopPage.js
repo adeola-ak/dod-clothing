@@ -9,6 +9,7 @@ import {
 import { connect } from "react-redux";
 import { updateCollections } from "../../redux/shop/shop.actions";
 import WithSpinner from "../../components/with-spinner/WithSpinner";
+import "./ShopPage.scss";
 
 const CollectionsOverviewWithSpinner = WithSpinner(CollectionsOverview);
 

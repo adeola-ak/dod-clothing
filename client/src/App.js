@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import { GlobalStyle } from "./global.styles";
 import "./App.css";
 import HomePage from "./pages/homepage/HomePage";
 import ShopPage from "./pages/shoppage/ShopPage";
@@ -36,7 +35,6 @@ function App(props) {
 	}, []);
 	return (
 		<div className="App">
-			<GlobalStyle />
 			<Header />
 			<Switch>
 				<Route exact path="/">
