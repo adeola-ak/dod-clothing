@@ -12,11 +12,11 @@ Tech Stack: React, Express, Redux, Stripe, Firebase
 
 This project is still being built. You can soon expect to see...
 
-1. Finish GraphQL implementation
+1. Completed GraphQL implementation
 
 2. User Profile Page
 
-3. Order History
+3. Order History Page
 
 4. Adding more Redux actions to clear cart and push to new page after successful checkout
 
