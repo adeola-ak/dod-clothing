@@ -18,7 +18,12 @@ const Header = ({ currentUser, hidden }) => {
 	return (
 		<HeaderContainer>
 			<LogoContainer to="/">
-				<p className="logo">LOGO</p>
+				<p className="logo">
+					<img
+						src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/271/drop-of-blood_1fa78.png"
+						style={{ height: "2em" }}
+					/>
+				</p>
 			</LogoContainer>
 			<OptionsContainer>
 				<OptionLink to="/shop">SHOP</OptionLink>
