@@ -2,8 +2,6 @@
 
 dod-CLOTHING is a mock E-commerce application created with the purpose of understanding how to create extensible and scalable componenets as well as to get experience incorporating multiple libraries into one complete project. A user can browse the DOD-CLOTHING website, make an account, add items to their cart/ save items in cart for a later purchase and checkout.
 
-making managing ones' closet an easier task. AFFAIR is meant to reduce the number of times you purchase an item you may need for an event that you forgot you already have right at home. Search your closet by key words from the description you added at upload, delete items you no longer own, favorite items and more.
-
 Tech Stack: React, Express, Redux, Stripe, Firebase
 
 [Live Site](https://aa-dod.herokuapp.com/)
